@@ -15,7 +15,7 @@ class Model {
     self.filepath = filepath
 
     let fileManager = FileManager.default
-    guard let fileData = fileManager.contents(atPath: filepath) else { fatalError("Unable to load model file from disk.") }
+    guard let fileData = fileManager.contents(atPath: filepath) else { fatalError("Error while parsing model: unable to open model file") }
     
     self.triangleCount = Int(fileData[80...83].withUnsafeBytes { $0.load(as: UInt32.self) })
     
@@ -35,7 +35,7 @@ class Model {
             }
         }
         
-        guard floats.count == 12 else { fatalError("Actual float count does not match expected") }
+        guard floats.count == 12 else { fatalError("Error while parsing model: incomplete triangle") }
         
         let triangle = Triangle(floats)
         self.triangles.append(triangle)
@@ -43,7 +43,7 @@ class Model {
     }
     
     if self.triangles.count != self.triangleCount {
-        fatalError("Actual model triangle count does not match expected")
+        fatalError("Error while parsing model: unexpected number of triangles")
     }
     
   }
