@@ -31,12 +31,17 @@ class Slicer {
         }
         
         for triangle in model.triangles {
-            for var cuttingPlane in cuttingPlanes {
-                if let lineSegment = getIntersection(cuttingPlane, triangle) {
-                    cuttingPlane.segments.append(lineSegment)
+            for cuttingPlaneIndex in 0 ..< cuttingPlanes.count {
+                if let lineSegment = getIntersection(cuttingPlanes[cuttingPlaneIndex], triangle) {
+                    cuttingPlanes[cuttingPlaneIndex].segments.append(lineSegment)
                 }
             }
         }
+        
+        let svgExporter = SVGExporter()
+        let fileString = svgExporter.export(segments: cuttingPlanes[20].segments)
+        try? fileString.write(to: URL(fileURLWithPath: "/Users/theo/slice.svg"), atomically: false, encoding: .utf8)
+        
     }
     
     func getIntersection(_ plane: CuttingPlane, _ triangle: Triangle) -> LineSegment? {
@@ -50,6 +55,19 @@ class Slicer {
             
         } else {
             // Actually calculate intersection line segments
+            
+            if vertex1Distance * vertex2Distance < 0 {
+                
+                let s10 = vertex2Distance / (vertex2Distance - vertex1Distance)
+                let s21 = vertex3Distance / (vertex3Distance - vertex2Distance)
+                
+                let intersectionStart = getLinearInterpolation(triangle.vertex2, triangle.vertex2, s10)
+                let intersectionEnd = getLinearInterpolation(triangle.vertex3, triangle.vertex2, s21)
+                
+                let intersection = LineSegment(start: intersectionStart, end: intersectionEnd)
+                return intersection
+                
+            }
         }
         
         return nil
@@ -57,6 +75,12 @@ class Slicer {
     
     func getDistance(fromVertex vertex: simd_float3, toCuttingPlane plane: CuttingPlane) -> Float {
         return simd_dot(vertex, simd_float3(x: 0.0, y: 0.0, z: 1.0)) - plane.height
+    }
+    
+    func getLinearInterpolation(_ start: simd_float3, _ end: simd_float3, _ distance: Float) -> simd_float3 {
+        let distanceVector = simd_float3(repeating: distance)
+        return simd_mix(start, end, distanceVector)
+        
     }
     
 }

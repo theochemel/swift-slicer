@@ -174,8 +174,8 @@
             filePath = "Sources/swift-slicer/Slicer.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
             landmarkName = "getIntersection(_:_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -184,14 +184,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "49F6A2D3-2926-407C-844A-531C1E20FC34"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sources/swift-slicer/Slicer.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
             landmarkName = "getIntersection(_:_:)"
             landmarkType = "7">
             <Actions>
@@ -214,8 +214,8 @@
             filePath = "Sources/swift-slicer/Slicer.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
             landmarkName = "getIntersection(_:_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -230,8 +230,8 @@
             filePath = "Sources/swift-slicer/Slicer.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
             landmarkName = "getIntersection(_:_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -246,9 +246,121 @@
             filePath = "Sources/swift-slicer/Slicer.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "getIntersection(_:_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "909B7D78-CAF8-4A36-8F62-AABA9A9F225C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Sources/swift-slicer/Slicer.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "getLinearInterpolation(_:_:_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "909B7D78-CAF8-4A36-8F62-AABA9A9F225C - 8ea8e46211865622"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "swift_slicer.Slicer.getLinearInterpolation(Swift.SIMD3&lt;Swift.Float&gt;, Swift.SIMD3&lt;Swift.Float&gt;, Swift.Float) -&gt; Swift.SIMD3&lt;Swift.Float&gt;"
+                  moduleName = "swift-slicer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/theo/Documents/swift-slicer/Sources/swift-slicer/Slicer.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "75"
+                  endingLineNumber = "75"
+                  offsetFromSymbolStart = "58">
+               </Location>
+               <Location
+                  uuid = "909B7D78-CAF8-4A36-8F62-AABA9A9F225C - 8ea8e46211865622"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "swift_slicer.Slicer.getLinearInterpolation(Swift.SIMD3&lt;Swift.Float&gt;, Swift.SIMD3&lt;Swift.Float&gt;, Swift.Float) -&gt; Swift.SIMD3&lt;Swift.Float&gt;"
+                  moduleName = "swift-slicer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/theo/Documents/swift-slicer/Sources/swift-slicer/Slicer.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "75"
+                  endingLineNumber = "75"
+                  offsetFromSymbolStart = "293">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D68F17A3-4998-46FF-89F5-01A780D116DC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Sources/swift-slicer/Slicer.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "getIntersection(_:_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "30E9A9CF-6F03-4663-AE1F-B58BB3DF8DED"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Sources/swift-slicer/Slicer.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "slice(model:layerHeight:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "24D446C3-B8D9-474D-8EC5-B2C8A4411FE7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Sources/swift-slicer/Slicer.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
             startingLineNumber = "45"
             endingLineNumber = "45"
-            landmarkName = "getIntersection(_:_:)"
+            landmarkName = "slice(model:layerHeight:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7178201B-B401-4D60-8B0B-A9F383814D6C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Sources/swift-slicer/Slicer.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "slice(model:layerHeight:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
