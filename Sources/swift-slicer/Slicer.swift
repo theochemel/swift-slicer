@@ -3,7 +3,7 @@ import simd
 
 class Slicer {
     
-    func slice(model: Model, layerHeight: Float) {
+    func slice(model: Model, layerHeight: Float) -> [CuttingPlane] {
         print("Slicing model \(model.name), \(model.triangleCount) triangular faces.")
         
         guard model.triangles.count > 0 else { fatalError("Error slicing model: cannot slice model with no triangular faces") }
@@ -38,10 +38,7 @@ class Slicer {
             }
         }
         
-        let svgExporter = SVGExporter()
-        let fileString = svgExporter.export(segments: cuttingPlanes[20].segments)
-        try? fileString.write(to: URL(fileURLWithPath: "/Users/theo/slice.svg"), atomically: false, encoding: .utf8)
-        
+        return cuttingPlanes
     }
     
     func getIntersection(_ plane: CuttingPlane, _ triangle: Triangle) -> LineSegment? {
@@ -56,18 +53,29 @@ class Slicer {
         } else {
             // Actually calculate intersection line segments
             
-            if vertex1Distance * vertex2Distance < 0 {
-                
+            var intersectPoints: [simd_float3] = []
+            
+            if vertex2Distance * vertex1Distance < 0 {
                 let s10 = vertex2Distance / (vertex2Distance - vertex1Distance)
-                let s21 = vertex3Distance / (vertex3Distance - vertex2Distance)
                 
-                let intersectionStart = getLinearInterpolation(triangle.vertex2, triangle.vertex2, s10)
-                let intersectionEnd = getLinearInterpolation(triangle.vertex3, triangle.vertex2, s21)
-                
-                let intersection = LineSegment(start: intersectionStart, end: intersectionEnd)
-                return intersection
-                
+                intersectPoints.append(triangle.vertex1 + ((triangle.vertex2 - triangle.vertex1) * simd_float3(repeating: s10)))
             }
+            
+            if vertex3Distance * vertex2Distance < 0 {
+                let s21 = vertex3Distance / (vertex3Distance - vertex2Distance)
+                intersectPoints.append(triangle.vertex2 + ((triangle.vertex3 - triangle.vertex2) * simd_float3(repeating: s21)))
+            }
+            
+            if vertex1Distance * vertex3Distance < 0 {
+                let s02 = vertex1Distance / (vertex1Distance - vertex3Distance)
+                intersectPoints.append(triangle.vertex3 + ((triangle.vertex1 - triangle.vertex3) * simd_float3(repeating: s02)))
+            }
+            
+            guard intersectPoints.count == 2 else { return nil }
+            
+            let intersection = LineSegment(start: intersectPoints[0], end: intersectPoints[1])
+            return intersection
+            
         }
         
         return nil

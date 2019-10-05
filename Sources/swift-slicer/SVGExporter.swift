@@ -20,9 +20,7 @@ class SVGExporter {
         pathString.append("Z")
         
         let fileString = "<svg viewBox=\"\(viewBoxString)\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"\(pathString)\" fill=\"transparent\" stroke=\"black\"/></svg>"
-        
-        print(fileString)
-        
+                
         return fileString
     }
 }
