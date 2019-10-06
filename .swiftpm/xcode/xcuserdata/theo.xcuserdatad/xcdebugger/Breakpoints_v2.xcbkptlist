@@ -262,8 +262,8 @@
             filePath = "Sources/swift-slicer/Slicer.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
             landmarkName = "Slicer"
             landmarkType = "3">
             <Locations>

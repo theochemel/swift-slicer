@@ -71,6 +71,18 @@ class Slicer {
                 intersectPoints.append(triangle.vertex3 + ((triangle.vertex1 - triangle.vertex3) * simd_float3(repeating: s02)))
             }
             
+            if vertex1Distance == 0 {
+                intersectPoints.append(triangle.vertex1)
+            }
+
+            if vertex2Distance == 0 {
+                intersectPoints.append(triangle.vertex2)
+            }
+
+            if vertex3Distance == 0 {
+                intersectPoints.append(triangle.vertex3)
+            }
+            
             guard intersectPoints.count == 2 else { return nil }
             
             let intersection = LineSegment(start: intersectPoints[0], end: intersectPoints[1])
@@ -79,6 +91,7 @@ class Slicer {
         }
         
         return nil
+        
     }
     
     func getDistance(fromVertex vertex: simd_float3, toCuttingPlane plane: CuttingPlane) -> Float {
